@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CurricuForge - AI-Powered Curriculum Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="logo">📚 CurricuForge</h1>
+            <p class="tagline">AI-Powered Personalized Curriculum Generator</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section class="form-section">
+                <h2>Create Your Personalized Curriculum</h2>
+                <form id="curriculumForm" class="curriculum-form">
+                    
+                    <!-- Topic Input -->
+                    <div class="form-group">
+                        <label for="topic">What would you like to learn?</label>
+                        <input 
+                            type="text" 
+                            id="topic" 
+                            name="topic" 
+                            placeholder="e.g., Machine Learning, Web Development, Data Science"
+                            required
+                        >
+                    </div>
+
+                    <!-- Level Selection -->
+                    <div class="form-group">
+                        <label for="level">Your Learning Level</label>
+                        <select id="level" name="level" required>
+                            <option value="">Select a level</option>
+                            <option value="beginner">Beginner - Just Starting Out</option>
+                            <option value="intermediate">Intermediate - Some Experience</option>
+                            <option value="advanced">Advanced - Experienced Learner</option>
+                        </select>
+                    </div>
+
+                    <!-- Duration Selection -->
+                    <div class="form-group">
+                        <label for="duration_weeks">Program Duration (weeks)</label>
+                        <input 
+                            type="number" 
+                            id="duration_weeks" 
+                            name="duration_weeks" 
+                            min="1" 
+                            max="52" 
+                            value="12"
+                            required
+                        >
+                    </div>
+
+                    <!-- Learning Style Selection -->
+                    <div class="form-group">
+                        <label for="learning_style">Your Learning Style</label>
+                        <select id="learning_style" name="learning_style" required>
+                            <option value="">Select a learning style</option>
+                            <option value="visual">Visual - Learn through images and diagrams</option>
+                            <option value="auditory">Auditory - Learn through listening and discussion</option>
+                            <option value="kinesthetic">Kinesthetic - Learn by doing and hands-on practice</option>
+                            <option value="reading">Reading/Writing - Learn through text and notes</option>
+                        </select>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn-submit">Generate Curriculum</button>
+                </form>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <h2>Your Personalized Curriculum</h2>
+                <div class="results-container">
+                    <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Generating your curriculum...</p>
+                    </div>
+                    <div id="curriculumOutput" class="curriculum-output"></div>
+                    <div id="errorMessage" class="error-message" style="display: none;"></div>
+                </div>
+                <button type="button" class="btn-back" onclick="resetForm()">← Back to Form</button>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 CurricuForge. Powered by AI | Designed for Learners</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
