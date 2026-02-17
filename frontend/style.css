@@ -1,0 +1,349 @@
+/* ==================== Reset & Base Styles ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ==================== Header ==================== */
+.header {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+    padding-top: 20px;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tagline {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+/* ==================== Main Content ==================== */
+.main-content {
+    flex: 1;
+}
+
+.form-section,
+.results-section {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 15px;
+}
+
+/* ==================== Form Styling ==================== */
+.curriculum-form {
+    display: grid;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    background-color: #f8f9ff;
+}
+
+input[type="text"]::placeholder {
+    color: #999;
+}
+
+select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23667eea' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 20px;
+    padding-right: 40px;
+}
+
+/* ==================== Button Styling ==================== */
+.btn-submit,
+.btn-back {
+    padding: 14px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    grid-column: 1 / -1;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+.btn-back {
+    background-color: #f0f0f0;
+    color: #333;
+    margin-top: 20px;
+}
+
+.btn-back:hover {
+    background-color: #e0e0e0;
+    transform: translateX(-4px);
+}
+
+/* ==================== Results Section ==================== */
+.results-container {
+    min-height: 300px;
+}
+
+.curriculum-output {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 5px solid #667eea;
+    line-height: 1.8;
+    color: #333;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.curriculum-output h3 {
+    color: #667eea;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.curriculum-output h4 {
+    color: #764ba2;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.curriculum-output ul,
+.curriculum-output ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.curriculum-output li {
+    margin-bottom: 8px;
+}
+
+.curriculum-output p {
+    margin-bottom: 12px;
+}
+
+/* ==================== Loading Spinner ==================== */
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-spinner p {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #667eea;
+    font-weight: 500;
+}
+
+/* ==================== Error Message ==================== */
+.error-message {
+    background-color: #fee;
+    border-left: 4px solid #f00;
+    color: #c00;
+    padding: 16px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* ==================== Footer ==================== */
+.footer {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+
+/* ==================== Responsive Design ==================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .form-section,
+    .results-section {
+        padding: 25px;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .curriculum-output {
+        max-height: 400px;
+        padding: 20px;
+    }
+
+    .btn-submit,
+    .btn-back {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .form-section,
+    .results-section {
+        padding: 20px;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .tagline {
+        font-size: 0.95rem;
+    }
+
+    .curriculum-form {
+        gap: 20px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select {
+        padding: 10px 12px;
+        font-size: 16px;
+    }
+
+    .curriculum-output {
+        max-height: 300px;
+        padding: 15px;
+        font-size: 0.95rem;
+    }
+}
+
+/* ==================== Scrollbar Styling ==================== */
+.curriculum-output::-webkit-scrollbar {
+    width: 8px;
+}
+
+.curriculum-output::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.curriculum-output::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 10px;
+}
+
+.curriculum-output::-webkit-scrollbar-thumb:hover {
+    background: #764ba2;
+}
+
+/* ==================== Utility Classes ==================== */
+.hidden {
+    display: none !important;
+}
